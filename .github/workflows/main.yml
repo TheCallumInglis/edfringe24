@@ -21,5 +21,18 @@ jobs:
     - name: Install dependencies
       run: pip install -r requirements.txt
 
+    - name: Check uploads directory
+      run: python .github/scripts/check_uploads.py
+
     - name: Run script
       run: python scripts/gen_plan.py
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name 'github-actions'
+        git config --global user.email 'github-actions@github.com'
+        git add planner/*
+        git commit -m 'GH Action: Update planner with new plan'
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
