@@ -1,4 +1,5 @@
 # EdFringe 2024 Show Planner
+[![Generate Plan](https://github.com/TheCallumInglis/edfringe24/actions/workflows/main.yml/badge.svg)](https://github.com/TheCallumInglis/edfringe24/actions/workflows/main.yml)
 
 ## Introduction
 
@@ -10,19 +11,24 @@ It has been designed to work with exports from [Plan My Fringe](https://planmyfr
 ```
 .
 ├── .github
-│ ├── workflows
-│ │ └── check_uploads.yml
 │ ├── scripts
 │ │ └── check_uploads.py
+│ ├── workflows
+│ │ ├── check_uploads.yml
+│ │ └── main.yml
+├── planner
+│ ├── archive
+│ │ └── ...
+│ └── ...
+├── scripts
+│ └── gen_plan.py
 ├── uploads
 │ ├── user1
 │ │ └── upload.csv
 │ ├── user2
 │ │ └── upload.csv
-├── planner
-├── scripts
-│ └── gen_plan.py
 ├── README.md
+├── requirements.txt
 ```
 
 - **.github/workflows/check_uploads.yml**: GitHub Actions workflow to check uploads and generate the plan.
