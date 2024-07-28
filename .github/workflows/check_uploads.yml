@@ -1,0 +1,23 @@
+name: Check Uploads Directory
+
+on:
+  pull_request:
+    paths:
+      - 'uploads/**'
+
+jobs:
+  check-uploads:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Run script to check uploads
+      run: |
+        python .github/scripts/check_uploads.py
