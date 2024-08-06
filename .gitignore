@@ -163,3 +163,5 @@ cython_debug/
 
 # Disallow commits to /planner
 # /planner/*
+
+.DS_Store
